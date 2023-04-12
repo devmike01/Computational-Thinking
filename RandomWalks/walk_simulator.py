@@ -1,7 +1,7 @@
 from location import Location
 from field import Field
 
-class WalkSimulator(object):
+class WalkSimulator():
     
     def __init__(self):
         print()
@@ -12,11 +12,11 @@ class WalkSimulator(object):
         between the final location and the location
         at the start of the walk"""
         start = f.getLoc(d)
-        for s in range(numsteps):
+        for s in range(numSteps):
             f.moveDrunk(d)
         return start.distFrom(f.getLoc(d))
 
-    def simWalks(self,numsteps, numTrials, dClass):
+    def simWalks(self, numsteps, numTrials, dClass):
         """Assumes numSteps an int >= 0, numTrials an int > 0, dClass a subclass of Drunk Simulates numTrials walks of numSteps steps
         each. Returns a list of the final distance for each trial"""
         Homer = dClass()

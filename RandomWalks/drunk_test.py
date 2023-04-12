@@ -1,6 +1,6 @@
 import random
 from usual_drunk import UsualDrunk
-from walk_simulator import WalkSimulator as wm
+from walk_simulator import WalkSimulator
 
 class DrunkTest:
 
@@ -16,6 +16,7 @@ class DrunkTest:
         numTrials walks and prints results
         """
         for numSteps in walkLengths:
+            wm = WalkSimulator()
             distances = wm.simWalks(numSteps, numTrials, dClass)
             print(dClass.__name__, 'random walks of numSteps', 'steps')
             print(' Mean =', round(sum(distances)/len(distances), 4))
